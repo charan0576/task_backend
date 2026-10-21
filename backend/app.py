@@ -31,8 +31,7 @@ ALLOWED_LOGO_TYPES = {"image/png": ".png", "image/jpeg": ".jpg", "image/webp": "
 FPS = 30
 PUBLIC_BASE_URL = os.getenv("PUBLIC_BASE_URL", "http://localhost:8000").rstrip("/")
 # FRONTEND_URL may list more than one website, separated by commas (for example the live Vercel site and a custom domain).
-FRONTEND_URLS = [u.strip().rstrip("/") for u in os.getenv("FRONTEND_URL", "http://localhost:5173").split(",") if u.strip()]
-FRONTEND_URL = FRONTEND_URLS[0]
+FRONTEND_URLS = [u.strip().rstrip("/") for u in os.getenv("FRONTEND_URL", "").split(",") if u.strip()] or ["http://localhost:5173"]
 JOBS = {}
 
 # Advent Tech runs as one workspace: there is no sign-in. Every profile and the organisation
